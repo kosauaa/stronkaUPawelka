@@ -332,7 +332,7 @@ ul.cennik li {
   flex-direction: row;
   margin: 10px 0;
   font-size: 1.1em;
-  align-items: flex-start;
+  width: 100%;
 }
 
 ul.cennik li .price-title {
@@ -342,9 +342,9 @@ ul.cennik li .price-title {
 
 
 ul.cennik li .price-price {
+  display: inline-flex;
   text-transform: uppercase;
   align-self: flex-end;
-  display: inline-flex;
 
 }
 
