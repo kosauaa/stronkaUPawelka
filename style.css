@@ -25,10 +25,6 @@ body {
   margin: 0;
 }
 
-
-
-
-
 .center {
   text-align: center;
 }
@@ -181,6 +177,10 @@ nav ul li a.wybrany {
   color: var(--specialColor);
 }
 
+nav ul li:last-child a {
+  color: #DAA520;
+}
+
 
 
 
@@ -219,6 +219,13 @@ nav.blend ul li a.wybrany:after {
 }
 
 
+nav.blend ul li:last-child a:before,
+nav.blend ul li:last-child a:after {
+  background: #DAA520;
+}
+
+
+
 
 nav.blend ul li a:before {
   left: 0;
@@ -235,14 +242,17 @@ nav.blend ul li a:hover:before {
 
 /* cennik */
 
+header.cennik {
+  margin-top: 150px;
+}
+
 ul.cennik {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  width: 60vw;
-  transform: translateX(-50%);
+  margin: 0 auto 0 auto;
+
+  width: 50vw;
+  /* transform: translateX(-50%); */
 }
 
 ul.cennik li {
@@ -261,7 +271,8 @@ ul.cennik li .price-title {
 ul.cennik li .price-price {
   text-transform: uppercase;
   width: 50%;
-  text-align: center;
+  text-align: right;
+  display: inline-block;
 
 }
 
@@ -275,11 +286,11 @@ header {
 
 }
 
-header.kontakt{
+header.kontakt {
   align-self: center;
 }
 
-header.cennik{
+header.cennik {
   align-self: center;
 }
 
@@ -361,6 +372,7 @@ div.worker span.workerName {
 div.informacje {
   display: flex;
   flex-direction: column;
+  width: 35%;
 
 }
 
@@ -370,7 +382,7 @@ div.time-box {
   justify-content: center;
 }
 
-div.otwarcie{
+div.otwarcie {
   display: flex;
   flex-direction: row;
 }
@@ -378,13 +390,14 @@ div.otwarcie{
 section.otwarcie {
   display: flex;
   flex-direction: row;
+  margin-bottom: 70px;
 }
 
 div.week {
   width: 150px;
 }
 
-div.ikonaKalendarz{
+div.ikonaKalendarz {
   display: flex;
 }
 
@@ -409,7 +422,7 @@ section.textAbout {
 }
 
 span.kontakt {
-  margin-top:150px;
+  margin-top: 150px;
   flex-direction: row;
   display: flex;
   width: 100%;
@@ -429,10 +442,10 @@ div.informacje {
 }
 
 span.mapa {
-  width: 50%;
+  width: 75%;
 }
 
-span.contactText{
+span.contactText {
   width: 50%;
   /* justify-content: center; */
   /* align-content: center; */
@@ -448,7 +461,7 @@ iframe {
   /* box-shadow: 3px 5px #000; */
 }
 
-section.informacje{
+section.informacje {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -474,9 +487,7 @@ span.kontaktText {
   width: 1vw;
 }
 
-section.kontaktBody{
-  /* min-height: 2vw; */
-}
+
 
 
 
@@ -492,48 +503,61 @@ footer {
 
 /* formularz */
 
-section.formularz{
+section.formularz {
   display: flex;
   flex-direction: column;
 }
 
 
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+/* input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   color: #aca49c;
   font-size: 0.875em;
 }
 
-input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
   color: #bbb5af;
 }
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+input::-moz-placeholder,
+textarea::-moz-placeholder {
   color: #aca49c;
   font-size: 0.875em;
 }
 
-input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
   color: #bbb5af;
+} */
+
+input::placeholder,
+textarea::placeholder {
+  color: #000;
+  font-size: 0.875em;
 }
 
-input::placeholder, textarea::placeholder {
+/* input:focus::placeholder,
+textarea:focus::placeholder {
+  color: #ffffff;
+} */
+
+input::placeholder:hover,
+textarea::placeholder:hover {
+  color: white;
+}
+
+/* input::-ms-placeholder,
+textarea::-ms-placeholder {
   color: #aca49c;
   font-size: 0.875em;
 }
 
-input:focus::placeholder, textarea::focus:placeholder {
+input:focus::-ms-placeholder,
+textarea:focus::-ms-placeholder {
   color: #bbb5af;
-}
-
-input::-ms-placeholder, textarea::-ms-placeholder {
-  color: #aca49c;
-  font-size: 0.875em;
-}
-
-input:focus::-ms-placeholder, textarea:focus::-ms-placeholder {
-  color: #bbb5af;
-}
+} */
 
 /* on hover placeholder */
 
@@ -574,7 +598,7 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
 } */
 
 
-section.formularz{
+section.formularz {
   display: flex;
 }
 
@@ -590,7 +614,7 @@ header {
 #form {
   position: flex;
   width: 500px;
-  margin: 50px auto 100px auto;
+  margin: 20px auto 100px auto;
 }
 
 input {
@@ -599,14 +623,14 @@ input {
   width: 470px;
   height: 50px;
   padding: 0px 15px 0px 15px;
-  
+
   background: transparent;
   outline: none;
   color: black;
-  
+
   border: solid 1px black;
   border-bottom: none;
-  
+
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -624,16 +648,16 @@ textarea {
   height: 110px;
   max-height: 110px;
   padding: 15px;
-  
+
   background: transparent;
   outline: none;
-  
+
   color: black;
   /* font-family: 'Lato', sans-serif; */
   font-size: 0.875em;
-  
+
   border: solid 1px black;
-  
+
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -647,17 +671,17 @@ textarea:hover {
 
 #submit {
   width: 502px;
-  
+
   padding: 0;
   margin: -5px 0px 0px 0px;
-  
+
   /* font-family: 'Lato', sans-serif; */
   font-size: 0.875em;
   color: var(--specialColor);
-  
-  outline:none;
+
+  outline: none;
   cursor: pointer;
-  
+
   border: solid 1px black;
   border-top: none;
 }
