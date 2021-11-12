@@ -15,6 +15,71 @@ body {
   background-color: var(--thirdColor);
 }
 
+
+/* main */
+
+.contentMain {
+  display: flex;
+  flex-direction: row;
+}
+
+.contentMain img {
+  width: 80vh;
+  margin-top: 20vh;
+  margin-left: 10%;
+}
+
+button {
+  height: 20%;
+  margin-top: 400px;
+  margin-left: 6%;
+  padding: 20px 30px;
+  background-color: var(--firstColor);
+  border: 4px solid var(--specialColor);
+}
+
+button a {
+  display: inline-flex;
+  text-align: center;
+  text-decoration: none;
+  color: var(--specialColor);
+  font-size: 4em;
+  text-shadow: 1px 1px black;
+  transition: 0.4s;
+}
+
+
+button:hover a {
+  font-size: 5em;
+
+}
+
+/* O salonie */
+
+
+
+
+section.aboutContent {
+  display: flex;
+  width: 90%;
+  margin: 150px auto 0 auto;
+  font-size: 1.1em;
+}
+
+header.about {
+  font-size: 1.7em;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.aboutContent span {
+  font-size: 1.2em;
+}
+
+section.aboutContent img {
+  width: 30%;
+}
+
 div {
   overflow: hidden;
 
@@ -260,19 +325,19 @@ ul.cennik li {
   flex-direction: row;
   margin: 10px 0;
   font-size: 1.1em;
+  align-items: flex-start;
 }
 
 ul.cennik li .price-title {
   text-transform: uppercase;
-  width: 50%
+  display: inline-flex;
 }
 
 
 ul.cennik li .price-price {
   text-transform: uppercase;
-  width: 50%;
-  text-align: right;
-  display: inline-block;
+  align-self: flex-end;
+  display: inline-flex;
 
 }
 
@@ -314,30 +379,30 @@ header.cennik {
 
 /* pracownicy */
 
-section span.workersTitle {
-  flex-direction: column;
-  position: absolute;
-  top: 15%;
-  text-align: center;
-  width: 100%;
-  text-transform: uppercase;
-  font-size: 2.5em;
-  color: var(--secondColor);
-  text-shadow: 2px 2px #fff;
+header.pracownicy {
+  margin-top: 150px;
+  display: inline-flex;
+  /* width: 300px; */
+  margin: 120px auto 50px auto;
+  font-size: 50px;
+
+
 }
+
+
 
 div.workers {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  margin-top: 15%;
-  margin-left: auto;
-  margin-right: auto;
+  /* align-items: center; */
+  margin-top: 20px;
+  margin: 0 auto 0 auto;
   width: 80%;
-  align-content: center;
+  /* align-content: center; */
   column-gap: 5%;
+  /* row-gap: 50%; */
 }
 
 div.workers div.worker {
@@ -360,11 +425,20 @@ div.worker img {
 
 div.worker span.workerName {
   text-align: center;
-  margin-top: 5px;
-  font-size: 1.1em;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 1.5em;
   text-transform: uppercase;
-  height: 40px;
+  height: 30px;
   width: 100%;
+  color: #4a8da3;
+  text-shadow: 1px 1px #305b69;
+}
+
+div.worker:first-child span.workerName {
+  color: #DAA520;
+  text-shadow: 2px 1px #a07918;
+  font-size: 2em;
 }
 
 /* kontakt */
@@ -414,12 +488,12 @@ i:hover {
   color: var(--specialColor);
 }
 
-section.textAbout {
+/* section.textAbout {
   margin-top: 200px;
   width: 80%;
   display: block;
   margin: 200px 10%;
-}
+} */
 
 span.kontakt {
   margin-top: 150px;
