@@ -101,11 +101,11 @@
         <section class="formularz">
             <header class="kontakt">Formularz kontaktowy</header>
 
-            <form id="form" class="topBefore">
-                <input id="name" type="text" placeholder="IMIĘ I NAZWISKO">
-                <input id="email" type="text" placeholder="E-MAIL">
-                <textarea id="message" type="text" placeholder="WIADOMOŚĆ"></textarea>
-                <input id="submit" type="submit" value="WYŚLIJ!">
+            <form id="form" class="topBefore" action="przesylanie.php" method="post">
+                <input name="name" id="name" type="text" placeholder="IMIĘ I NAZWISKO">
+                <input name="email" id="email" type="text" placeholder="E-MAIL">
+                <textarea name="message" id="message" type="text" placeholder="WIADOMOŚĆ"></textarea>
+                <input name="submit" id="submit" type="submit" value="WYŚLIJ!">
 
             </form>
         </section>

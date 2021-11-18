@@ -425,15 +425,16 @@ div.workers {
   margin-top: 20px;
   margin: 0 auto 0 auto;
   width: 80%;
+  gap: 50px;
   /* align-content: center; */
-  column-gap: 5%;
-  /* row-gap: 50%; */
+  /* column-gap: 20px;
+  row-gap: 10px; */
 }
 
 div.workers div.worker {
   display: flex;
   flex-direction: column;
-  width: 20rem;
+  width: 25em;
 }
 
 /* section span.title.pracownicy {
@@ -444,7 +445,7 @@ div.workers div.worker {
 
 div.worker img {
   width: 100%;
-  height: 100%;
+  
   box-shadow: 0 0 2em var(--specialColor);
 }
 
