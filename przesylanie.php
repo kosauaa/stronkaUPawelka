@@ -7,7 +7,7 @@ if(isset($_POST['submit']))
  $email = $_POST['email'];
  $message = $_POST['message'];
  
- $insert = mysqli_query($db, "INSERT INTO `wiadomosci`(`imie`, `email`, `wiadomosc`) VALUES ('$name', '$email', '$message')");
+ $insert = mysqli_query($db, "INSERT INTO `wiadomosci`(`nazwa`, `email`, `message`) VALUES ('$name', '$email', '$message')");
  
  if(!$insert)
  {
