@@ -22,13 +22,16 @@ body {
   display: flex;
   flex-direction: row;
   height: 80vh;
+  margin-top: calc((20vh + 80px)/2);
+  margin-bottom: auto;
 }
 
 .contentMain img {
-  height: 70%;
-  margin-top: 10%;
+  height: 100%;
   margin-left: 5%;
 }
+
+
 
 .contentMain button {
   height: 20%;
@@ -313,8 +316,8 @@ nav.blend ul li a:hover:before {
   width: 100%;
 }
 
-a.hamburger i{
-  display:none;
+a.hamburger i {
+  display: none;
 }
 
 /* cennik */
@@ -334,7 +337,7 @@ ul.cennik {
   flex-direction: column;
   margin: 0 auto 0 auto;
 
-  width: 50vw;
+  width: 60vw;
   /* transform: translateX(-50%); */
 }
 
@@ -348,8 +351,8 @@ ul.cennik li {
 
 ul.cennik li .price-title {
   text-transform: uppercase;
-  
-  display:flex;
+
+  display: flex;
 
 }
 
@@ -358,11 +361,11 @@ ul.cennik li .price-price {
   text-transform: uppercase;
   padding-left: 10px;
   text-align: right;
-  display:flex;
+  display: flex;
 
 }
 
-ul.cennik li:first-of-type{
+ul.cennik li:first-of-type {
   justify-content: center;
   align-content: center;
 }
@@ -396,7 +399,7 @@ header.kontakt {
 
 header.cennik {
   align-self: center;
-  
+
 }
 
 
@@ -460,7 +463,7 @@ div.workers div.worker {
 
 div.worker img {
   width: 100%;
-  
+
   box-shadow: 0 0 2em var(--specialColor);
 }
 
@@ -802,7 +805,7 @@ textarea:hover {
   width: 502px;
 
   padding: 0;
-  margin: 0px 0px 0px 0px;
+  margin: -5px 0px 0px 0px;
 
   /* font-family: 'Lato', sans-serif; */
   font-size: 0.875em;
@@ -813,6 +816,10 @@ textarea:hover {
 
   border: solid 1px black;
   border-top: none;
+}
+
+#submit.logowanie {
+  margin: 0px 0px 0px 0px;
 }
 
 #submit:hover {
@@ -855,7 +862,7 @@ input#password:hover {
   background-color: #EA1B1B;
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
   nav {
     z-index: 2;
     opacity: 1;
@@ -871,10 +878,10 @@ input#password:hover {
     flex-direction: column;
     display: flex;
     height: 400px;
-    
-  
+
+
   }
-  
+
   nav a.logo {
     /* width: 20vw; */
     /* margin-left: 7%; */
@@ -882,18 +889,18 @@ input#password:hover {
     display: flex;
     height: 180px;
     align-self: center;
-    
+
     /* min-width: 100px; */
   }
-  
+
   nav a.logo img {
     margin: 0 auto;
-  
+
   }
-  
+
   nav ul {
     list-style: none;
-    margin-top:8px;
+    margin-top: 8px;
     width: 100%;
     /* text-align: center; */
     flex-direction: column;
@@ -902,7 +909,7 @@ input#password:hover {
     /* align-items: center;
     justify-content: center; */
   }
-  
+
   nav ul li {
     display: inline-block;
     /* padding: 0 15px; */
@@ -911,7 +918,7 @@ input#password:hover {
     text-align: center;
     align-self: center;
   }
-  
+
   nav ul li a {
     display: flex;
     padding: 15px 0;
@@ -924,24 +931,24 @@ input#password:hover {
     justify-content: center;
     width: 100%;
     font-size: 1.2em;
-  
+
   }
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
   nav.blend ul li a {
     position: relative;
     border-radius: 5px;
     overflow: hidden;
     z-index: 1;
   }
-  
-  
+
+
   nav.blend ul li a:before,
   nav.blend ul li a:after {
     position: absolute;
@@ -957,60 +964,135 @@ input#password:hover {
     z-index: -1;
     opacity: .75;
   }
-  
+
   nav.blend ul li a:before {
     left: 0;
   }
-  
+
   nav.blend ul li a:after {
     right: 0;
   }
-  
+
   nav.blend ul li a:hover:after,
   nav.blend ul li a:hover:before {
     width: 100%;
   }
-  
-  
-  
-  
-  
-  a.hamburger{
-    display:block;
+
+
+
+
+
+  a.hamburger {
+    display: block;
     text-transform: none;
     text-decoration: none;
     position: absolute;
     right: 25px;
     top: 25px;
   }
-  a.hamburger i{
-    color:black;
+
+  a.hamburger i {
+    color: black;
     display: flex;
     padding: 0;
     font-size: 30px;
-  
+
   }
-  
-  
-  
-  nav.active{
-    height:90px;
-  } 
-  
-  nav.blend ul.active{
-    display:none;
+
+
+
+  nav.active {
+    height: 75px;
   }
-  
-  .logo img{
-    height: 80px;
+
+  nav.blend ul.active {
+    display: none;
+  }
+
+  .logo img {
+    height: 75px;
     position: absolute;
-    top:5px;
-    left:50%;
+    top: 0px;
+    left: 50%;
     transform: translateX(-50%);
-  
+
   }
 
 
-/* nav */
-}
+  /* kontakt */
 
+
+  div.informacje {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+
+  }
+
+  span.kontakt {
+    margin-top: 150px;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 150vh;
+  }
+
+
+  span.mapa {
+    width: 100vw;
+    height: 100vw;
+  }
+
+
+
+  div.time-box,
+  div.kontakt-box {
+    font-size: 18px;
+  }
+
+
+
+  iframe {
+    margin: 0 auto;
+  }
+
+  section.informacje {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    /* align-items: center; */
+    height: 70%;
+    width: 80%;
+  }
+
+
+  span.kontaktText {
+    display: flex;
+    padding: 15%;
+    width: 1vw;
+  }
+
+  form {
+    font-size: 18px;
+  }
+
+  header.otwarcie,
+  header.kontakt-info {
+    align-self: center;
+  }
+
+  h
+
+  /* cennik */
+  ul.cennik {
+
+    width: 85vw;
+    /* transform: translateX(-50%); */
+  }
+
+  section.contentMain {
+    margin-top: 80px;
+  }
+
+}
