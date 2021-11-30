@@ -34,7 +34,9 @@
         </nav>
 
         <section class="contentMain">
-            <header class="panel">Panel administratora</header> 
+            <!-- <header class="panel">Panel administratora</header> -->
+            
+            
 
             <?php
             include('db.connection.php');
@@ -43,21 +45,32 @@
 
             $username = stripcslashes($username);
             $password = stripcslashes($password);
-            $username = mysqli_real_escape_string($username);
-            $password = mysqli_real_escape_string($password);
+            $username = mysqli_real_escape_string($db, $username);
+            $password = mysqli_real_escape_string($db, $password);
 
-            $sql = "SELECT * FROM uzytkownicy WHERE login = '$username' and password = '$password";
+            $sql = "SELECT * FROM uzytkownicy WHERE login = '$username' and password = '$password'";
             $result = mysqli_query($db, $sql);
-            $row = msqli_fetch_array($result, MYSQLI_ASSOC);
+            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $count = mysqli_num_rows($result);
 
-            if( count == 1){
-                echo "<h1> udało ci się zalogować $username !</h1>";
+            echo "<br>";
+            if( $count == 1){
+                echo "<header> udało ci się zalogować ! </header>";
             }
             else{
-                echo "<h1> nie udało ci się zalogować :(</h1>";
+                
+                header('Location: /bazka/stronkaUPawelka/logowanien.html');
             }
 
+            
+            // połączenie z bazą danych w osobnym pliku
+            $z = $mysqli->query("SELECT id, nazwa, email, message FROM wiadomosci");
+            // zapisujemy wynik zapytania do tablicy asocjacyjnej 
+            while ($r = $z->fetch_assoc()) {
+                echo "<p>ID: ".$r["id"].", Nazwa: ".$r["nazwa"].",EMAIL: ".$r["email"].",Wiadomość: ".$r["message"]."</p>";
+            }
+            // zwalniamy pamięć z wyniku
+            $z->free();
             ?>
         </section>
 
