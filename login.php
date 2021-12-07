@@ -26,7 +26,7 @@
                 <li><a href="pracownicy.html">Pracownicy</a></li>
                 <li><a href="cennik.html">Cennik</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="logowanie.html" class="">Logowanie</a></li>
+                <li><a href="logowanie.php" class="">Logowanie</a></li>
             </ul>
             <a href="#" class="hamburger">
                 <i class="fas fa-bars"></i>
@@ -35,42 +35,45 @@
 
         <section class="contentMain">
             <!-- <header class="panel">Panel administratora</header> -->
-            
-            
+
+
 
             <?php
-            include('db.connection.php');
+
+            include('db_connection.php');
+
             $username = $_POST['login'];
             $password = $_POST['password'];
+
+            // echo $username;
 
             $username = stripcslashes($username);
             $password = stripcslashes($password);
             $username = mysqli_real_escape_string($db, $username);
             $password = mysqli_real_escape_string($db, $password);
 
+
+
             $sql = "SELECT * FROM uzytkownicy WHERE login = '$username' and password = '$password'";
             $result = mysqli_query($db, $sql);
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $count = mysqli_num_rows($result);
 
-            echo "<br>";
-            if( $count == 1){
-                echo "<header> udało ci się zalogować ! </header>";
-            }
-            else{
-                
-                header('Location: /bazka/stronkaUPawelka/logowanien.html');
+
+
+
+
+            if ($count == 1) {          //rozpoczęcie sesji
+                session_start();
+                echo session_id();
+                // var_dump($_POST);
+                $_SESSION['user'] = $username;
+                header('Location: panel.php');
+                echo "<header> $username udało ci się zalogować ! </header>";
+            } else {
+                header('Location: logowanien.php');
             }
 
-            
-            // połączenie z bazą danych w osobnym pliku
-            $z = $mysqli->query("SELECT id, nazwa, email, message FROM wiadomosci");
-            // zapisujemy wynik zapytania do tablicy asocjacyjnej 
-            while ($r = $z->fetch_assoc()) {
-                echo "<p>ID: ".$r["id"].", Nazwa: ".$r["nazwa"].",EMAIL: ".$r["email"].",Wiadomość: ".$r["message"]."</p>";
-            }
-            // zwalniamy pamięć z wyniku
-            $z->free();
             ?>
         </section>
 
