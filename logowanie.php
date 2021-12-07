@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php session_start();
+?>
 <html lang="en">
 
 <head>
@@ -28,25 +29,30 @@
                 <li><a href="pracownicy.html">Pracownicy</a></li>
                 <li><a href="cennik.html">Cennik</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="logowanie.html" class="logowanie">Logowanie</a></li>
+                <li><a href="logowanie.php" class="">Logowanie</a></li>
             </ul>
             <a href="#" class="hamburger">
                 <i class="fas fa-bars"></i>
             </a>
         </nav>
 
-        <section class="logowanie">
-            <header class="logowanie">Panel logowania</header>
+        <?php echo session_id();
+        if (empty($_SESSION['user'])) : ?>
 
-            <form id="form" class="logowanie" action="login.php" method="post">
-                <input id="login" type="text" placeholder="LOGIN">
-                <input id="password" type="password" placeholder="HASŁO">
-                <!-- <textarea id="message" type="text" placeholder="WIADOMOŚĆ"></textarea> -->
-                <input id="zaloguj" type="submit" class="logowanie" value="LOGOWANIE">
+            <section class="logowanie">
+                <header class="logowanie">Panel logowania</header>
 
-            </form>
-        </section>
-        
+                <form id="form" class="logowanie" action="login.php" method="post">
+                    <input name="login" id="login" type="text" placeholder="LOGIN">
+                    <input name="password" id="password" type="password" placeholder="HASŁO">
+                    <!-- <textarea id="message" type="text" placeholder="WIADOMOŚĆ"></textarea> -->
+                    <input id="zaloguj" type="submit" class="logowanie" value="LOGOWANIE">
+
+                </form>
+            </section>
+        <?php else : header('Location: panel.php');
+        endif; ?>
+
 
 
     </section>

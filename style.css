@@ -836,9 +836,11 @@ header.logowanie {
   text-align: center;
 }
 
-header.nieudane{
-  margin:0 auto;
-  font-size: 15px;
+header.nieudane {
+  margin-top: 150px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
 }
 
 #zaloguj {

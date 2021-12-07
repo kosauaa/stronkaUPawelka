@@ -1,0 +1,16 @@
+Konto użytkownika do bazy danych
+login: adminek
+hasło: henio
+
+
+Bazy danych
+
+
+1. nazwa: bazunia
+
+CREATE TABLE `bazunia`.`wiadomosci` ( `id` INT NOT NULL AUTO_INCREMENT , `nazwa` VARCHAR(50) NOT NULL , `email` VARCHAR(30) NOT NULL , `message` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+
+2. nazwa: uzytkownicy
+
+CREATE TABLE `bazunia`.`uzytkownicy` ( `id` INT NOT NULL AUTO_INCREMENT , `login` VARCHAR(30) NOT NULL , `password` VARCHAR(30) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
