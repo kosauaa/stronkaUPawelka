@@ -24,6 +24,7 @@ body {
   height: 80vh;
   margin-top: calc((20vh + 80px)/2);
   margin-bottom: auto;
+  width:100vw;
 }
 
 .contentMain img {
@@ -108,7 +109,7 @@ body {
 
 section.main {
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   z-index: 0;
   background-color: var(--firstColor);
   display: flex;
@@ -411,7 +412,7 @@ header.cennik {
   font-weight: 1200;
   /* text-decoration: underline; */
   color: var(--secondColor);
-  transition: .05s all linear;
+  
 
 }
 
@@ -734,14 +735,15 @@ header {
 
 #form {
   position: flex;
-  width: 500px;
-  margin: 20px auto 100px auto;
+  width: 100%;
+  margin: 20px auto 20px auto;
 }
 
 input {
   /* font-family: 'Lato', sans-serif; */
   font-size: 0.875em;
-  width: 470px;
+  /* width: 470px; */
+  width: 100%;
   height: 50px;
   padding: 0px 15px 0px 15px;
 
@@ -775,8 +777,9 @@ input#email:hover {
 }
 
 textarea {
-  width: 470px;
-  max-width: 470px;
+  /* width: 470px; */
+  width:100%;
+  /* max-width: 470px; */
   height: 110px;
   max-height: 110px;
   padding: 15px;
@@ -802,10 +805,11 @@ textarea:hover {
 }
 
 #submit {
-  width: 502px;
+  /* width: 502px; */
+  width:100%;
 
   padding: 0;
-  margin: -5px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
 
   /* font-family: 'Lato', sans-serif; */
   font-size: 0.875em;
@@ -820,6 +824,7 @@ textarea:hover {
 
 #submit.logowanie {
   margin: 0px 0px 0px 0px;
+  width:100%;
 }
 
 #submit:hover {
@@ -844,7 +849,7 @@ header.nieudane {
 }
 
 #zaloguj {
-  width: 502px;
+  width: 100%;
 
   padding: 15px;
   margin: 0px 0px 0px 0px;
@@ -1070,7 +1075,7 @@ input#password:hover {
     margin: 0 auto;
     /* align-items: center; */
     height: 70%;
-    width: 80%;
+    width: 90%;
   }
 
 
@@ -1080,8 +1085,11 @@ input#password:hover {
     width: 1vw;
   }
 
-  form {
+  #form {
     font-size: 18px;
+    width: 70%;
+
+   
   }
 
   header.otwarcie,
@@ -1089,17 +1097,23 @@ input#password:hover {
     align-self: center;
   }
 
-  h
 
   /* cennik */
   ul.cennik {
-
-    width: 85vw;
+    width: 90vw;
     /* transform: translateX(-50%); */
+  }
+
+  ul.cennik li{
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
   }
 
   section.contentMain {
     margin-top: 80px;
   }
+
+  
 
 }
