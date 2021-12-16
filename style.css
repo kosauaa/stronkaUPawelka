@@ -23,40 +23,46 @@ body {
   flex-direction: row;
   height: 80vh;
   margin-top: calc((20vh + 80px)/2);
-  margin-bottom: auto;
+  margin-bottom: 0;
   width:100vw;
 }
 
 .contentMain img {
-  height: 100%;
-  margin-left: 5%;
+  width: 80%;
+
+
 }
 
 
 
-.contentMain button {
-  height: 20%;
-  margin-top: 400px;
-  margin-left: 6%;
-  padding: 20px 30px;
-  background-color: var(--firstColor);
-  border: 4px solid var(--specialColor);
-}
 
-.contentMain button a {
+.contentMain a {
   display: inline-flex;
   text-align: center;
   text-decoration: none;
   color: var(--specialColor);
-  font-size: 4em;
+  font-size: 80px;
   text-shadow: 1px 1px black;
   transition: 0.4s;
 }
 
 
-button:hover a {
-  font-size: 5em;
+a#welcomeButton:hover {
+  color: white;
+  border-color: var(--specialColor);
+}
 
+aside a#welcomeButton{
+  border: 4px solid var(--specialColor);
+  padding: 20px;
+  margin-right: 20px;
+}
+
+aside{
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  align-content:center;
 }
 
 /* O salonie */
@@ -80,7 +86,6 @@ section.aboutText {
 
 header.about {
   font-size: 1.7em;
-  letter-spacing: 2px;
   margin-bottom: 5px;
 }
 
@@ -561,7 +566,7 @@ div.informacje {
 }
 
 span.mapa {
-  width: 75%;
+  width: 50%;
 }
 
 span.contactText {
@@ -574,7 +579,7 @@ span.contactText {
 
 iframe {
   display: flex;
-  width: 80%;
+  width: 90%;
   height: 100%;
   margin: 0 auto;
   /* box-shadow: 3px 5px #000; */
@@ -611,12 +616,13 @@ span.kontaktText {
 
 
 footer {
-  display: inline-block;
+  display: flex;
   background-color: var(--secondColor);
   color: white;
   width: 100%;
   height: 30px;
-  text-align: center;
+  align-items:  center;
+  justify-content: center;
   font-size: 20px;
 
 }
@@ -632,27 +638,7 @@ section.formularz {
 
 
 
-/* input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: #aca49c;
-  font-size: 0.875em;
-}
 
-input:focus::-webkit-input-placeholder,
-textarea:focus::-webkit-input-placeholder {
-  color: #bbb5af;
-}
-
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: #aca49c;
-  font-size: 0.875em;
-}
-
-input:focus::-moz-placeholder,
-textarea:focus::-moz-placeholder {
-  color: #bbb5af;
-} */
 
 input::placeholder,
 textarea::placeholder {
@@ -660,32 +646,11 @@ textarea::placeholder {
   font-size: 0.875em;
 }
 
-/* input:focus::placeholder,
-textarea:focus::placeholder {
-  color: #ffffff;
-} */
+
 
 input::placeholder:hover,
 textarea::placeholder:hover {
   color: white;
-}
-
-/* input::-ms-placeholder,
-textarea::-ms-placeholder {
-  color: #aca49c;
-  font-size: 0.875em;
-}
-
-input:focus::-ms-placeholder,
-textarea:focus::-ms-placeholder {
-  color: #bbb5af;
-} */
-
-/* on hover placeholder */
-
-/* input:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder {
-  color: #e2dedb;
-  font-size: 0.875em;
 }
 
 input:hover:focus::-webkit-input-placeholder, textarea:hover:focus::-webkit-input-placeholder {
@@ -724,8 +689,13 @@ section.formularz {
   display: flex;
 }
 
+header.otwarcie, header.kontakt-info{
+  align-self: center;
+  font-size: 2.3em;
+  padding: 0 20px;
+}
+
 header {
-  position: flex;
   margin: 20px 0 25px 0;
   font-size: 2.3em;
   text-align: center;
@@ -735,17 +705,18 @@ header {
 
 #form {
   position: flex;
-  width: 100%;
+  width: 40vw;
   margin: 20px auto 20px auto;
 }
 
 input {
   /* font-family: 'Lato', sans-serif; */
   font-size: 0.875em;
-  /* width: 470px; */
-  width: 100%;
+  width: 40vw;
   height: 50px;
   padding: 0px 15px 0px 15px;
+
+  box-sizing: border-box;
 
   background: transparent;
   outline: none;
@@ -764,6 +735,8 @@ input {
 input:hover {
   background-color: var(--specialColor);
   color: white;
+
+
 }
 
 input#submit:hover,
@@ -778,11 +751,13 @@ input#email:hover {
 
 textarea {
   /* width: 470px; */
-  width:100%;
+  width:40vw;
   /* max-width: 470px; */
   height: 110px;
   max-height: 110px;
   padding: 15px;
+
+  box-sizing: border-box;
 
   background: transparent;
   outline: none;
@@ -806,10 +781,10 @@ textarea:hover {
 
 #submit {
   /* width: 502px; */
-  width:100%;
 
-  padding: 0;
   margin: 0px 0px 0px 0px;
+
+  box-sizing: border-box;
 
   /* font-family: 'Lato', sans-serif; */
   font-size: 0.875em;
@@ -874,7 +849,7 @@ input#password:hover {
   background-color: #EA1B1B;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   nav {
     z-index: 2;
     opacity: 1;
@@ -908,6 +883,10 @@ input#password:hover {
   nav a.logo img {
     margin: 0 auto;
 
+  }
+
+  section.informacje{
+    height:80%;
   }
 
   nav ul {
@@ -944,6 +923,11 @@ input#password:hover {
     width: 100%;
     font-size: 1.2em;
 
+  }
+
+  form, input, textarea{
+    width:70vw;
+    margin: 0 auto;
   }
 
 
@@ -1046,7 +1030,7 @@ input#password:hover {
     flex-direction: column;
     display: flex;
     width: 100%;
-    height: 150vh;
+    min-height: 130vh;
   }
 
 
@@ -1076,6 +1060,7 @@ input#password:hover {
     /* align-items: center; */
     height: 70%;
     width: 90%;
+    padding: 0 20px;
   }
 
 
