@@ -43,6 +43,7 @@ endif; ?>
             <button><a href="logout.php">wyloguj</a></button>
 
 
+            //połączenie z bazą danych w osobnym pliku
             <?php
             // połączenie z bazą danych w osobnym pliku
             require_once "db_connection.php";
@@ -50,8 +51,8 @@ endif; ?>
             $result = mysqli_query($db, "SELECT * FROM wiadomosci",);
 
             while ($row = mysqli_fetch_array($result)) {
-                echo "Imie: " . $row['nazwa'] . "<br>E-mail: " . $row['email'] . "<br>Wiadomość:  " . $row['message'];
-                echo "<br><br>";
+                echo "Imie: " . $row['nazwa'] . " " . $row['email'] . " " . $row['message'];
+                echo "<br />";
             }
 
             mysqli_close($con);
