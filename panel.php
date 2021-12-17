@@ -39,23 +39,53 @@ endif; ?>
         </nav>
 
         <section class="contentMain">
-            <header>to jest panel :)</header>
-            <button><a href="logout.php">wyloguj</a></button>
+            <section class="informacje">
+                <header>panel wiadomości</header>
+                <header class="username"><span class="username">Użytkownik:</span><?php echo $_SESSION["user"]; ?></header>
+
+                <a href="logout.php" class="logout">wyloguj</a>
+            </section>
+
+            <section class="tabelaWiadomosci">
+                <table class="wiadomosci" border="1">
+                    <tr>
+                        <td>ID</td>
+                        <td>Data</td>
+                        <td>Nazwa</td>
+                        <td>E-mail</td>
+                        <td>Wiadomość</td>
+                    </tr>
+
+                    <?php
+                    // połączenie z bazą danych w osobnym pliku
+                    require_once "db_connection.php";
+                    // zapytanie do bazy danych
+                    $result = mysqli_query($db, "SELECT * FROM wiadomosci",);
+
+                    while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['data']; ?></td>
+                            <td><?php echo $row['nazwa']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['message']; ?></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                </table>
+            </section>
 
 
-            //połączenie z bazą danych w osobnym pliku
+
+
             <?php
-            // połączenie z bazą danych w osobnym pliku
-            require_once "db_connection.php";
-            // zapytanie do bazy danych
-            $result = mysqli_query($db, "SELECT * FROM wiadomosci",);
+            // echo "Imie: " . $row['nazwa'] . "<br>" . $row['email'] . "<br>" . " " . $row['message'];
+            // echo "<br><br>";
 
-            while ($row = mysqli_fetch_array($result)) {
-                echo "Imie: " . $row['nazwa'] . " " . $row['email'] . " " . $row['message'];
-                echo "<br />";
-            }
 
-            mysqli_close($con);
+            mysqli_close($db);
             ?>
 
         </section>
