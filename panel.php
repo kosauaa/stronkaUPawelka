@@ -40,20 +40,22 @@ endif; ?>
 
         <section class="contentMain">
             <section class="informacje">
-                <header>panel wiadomości</header>
-                <header class="username"><span class="username">Użytkownik:</span><?php echo $_SESSION["user"]; ?></header>
+                <header class="messagePanel">panel wiadomości</header>
+                <header class="username">
+                    <div class="username">Użytkownik:</div><?php echo $_SESSION["user"]; ?>
+                </header>
 
                 <a href="logout.php" class="logout">wyloguj</a>
             </section>
 
             <section class="tabelaWiadomosci">
                 <table class="wiadomosci" border="1">
-                    <tr>
-                        <td>ID</td>
-                        <td>Data</td>
-                        <td>Nazwa</td>
-                        <td>E-mail</td>
-                        <td>Wiadomość</td>
+                    <tr class="titles">
+                        <th>ID</th>
+                        <th>Data</th>
+                        <th>Nazwa</th>
+                        <th>E-mail</th>
+                        <th>Wiadomość</th>
                     </tr>
 
                     <?php
@@ -64,12 +66,12 @@ endif; ?>
 
                     while ($row = mysqli_fetch_array($result)) {
                     ?>
-                        <tr>
-                            <td><?php echo $row['id']; ?></td>
-                            <td><?php echo $row['data']; ?></td>
-                            <td><?php echo $row['nazwa']; ?></td>
-                            <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['message']; ?></td>
+                        <tr class="data">
+                            <th><?php echo $row['id']; ?></th>
+                            <th><?php echo $row['data']; ?></th>
+                            <th><?php echo $row['nazwa']; ?></th>
+                            <th><?php echo $row['email']; ?></th>
+                            <th><?php echo $row['message']; ?></th>
                         </tr>
                     <?php
                     }

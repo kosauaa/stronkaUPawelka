@@ -624,8 +624,13 @@ section.informacje {
   flex-direction: column;
   /* align-items: center; */
   height: 100%;
-  width: 50%;
+  width: 35%;
+  padding: 10px;
+  /* border-right: 1px solid black; */
+}
 
+section.tabelaWiadomosci {
+  width: 65%;
 }
 
 span.openingTitle {
@@ -874,7 +879,7 @@ header.usernameInfo {
 header.username {
   font-size: 20px;
   margin-top: 0;
-  display: inline-flex;
+  display: block;
   color: #DAA520;
 
 }
@@ -892,7 +897,7 @@ a.logout:hover {
   color: white;
 }
 
-span.username {
+div.username {
   color: var(--specialColor);
 }
 
@@ -931,9 +936,56 @@ input#password:hover {
   background-color: #EA1B1B;
 }
 
+header.messagePanel {
+  margin-top: 0px;
+  align-self: center;
+}
+
 table.wiadomosci {
-  width: 400px;
-  word-wrap: break-word;
+  width: 90%;
+  /* word-wrap: break-word; */
+  border-collapse: collapse;
+  border: 2px solid var(--specialColor);
+  margin: 0 auto;
+}
+
+@media (max-width: 850px) {
+  section.informacje {
+    width: 100%;
+  }
+
+  section.tabelaWiadomosci {
+    width: 100%;
+  }
+
+
+  table.wiadomosci {
+    align-self: center;
+    font-size: 15px;
+    margin: 10px auto;
+    width: 90%;
+  }
+}
+
+header.rightSent {
+  color: #30db19;
+  font-size: 20px;
+  align-self: center;
+}
+
+tr.titles th {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
+}
+
+tr.data th {
+  font-weight: bold;
+  color: #8b8b8b;
+}
+
+th {
+  padding: 3px 5px;
 }
 
 @media (max-width: 850px) {
@@ -974,7 +1026,9 @@ table.wiadomosci {
 
   section.informacje {
     height: 80%;
+    padding: 10px;
   }
+
 
   nav ul {
     list-style: none;
@@ -1147,8 +1201,9 @@ table.wiadomosci {
     flex-direction: column;
     margin: 0 auto;
     /* align-items: center; */
+
     height: 70%;
-    width: 90%;
+    width: 30%;
     padding: 0 20px;
   }
 

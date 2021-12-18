@@ -9,9 +9,10 @@ if (isset($_POST['submit'])) {
     $insert = mysqli_query($db, "INSERT INTO `wiadomosci`(`nazwa`, `email`, `message`) VALUES ('$name', '$email', '$message')");
 
     if (!$insert) {
-        echo mysqli_error();
+        echo mysqli_error($db);
     } else {
-        echo "Twoja wiadomość została wysłana";
+        header('Location: kontaktw.html');
+        // echo "Twoja wiadomość została wysłana";
     }
 
     mysqli_close($db);
