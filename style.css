@@ -65,7 +65,21 @@ aside a#welcomeButton {
   border: 4px solid var(--specialColor);
   padding: 20px;
   margin-right: 20px;
-  font-size: 4em;
+  font-size: 3.2em;
+}
+
+@media(max-width: 850px) {
+  aside a#welcomeButton {
+    font-size: 1.8em;
+    padding: 10px;
+    margin: 30px 0 0 0;
+    align-self: center;
+  }
+
+  .contentMain img {
+    width: 90%;
+  }
+
 }
 
 aside {
@@ -390,7 +404,7 @@ ul.cennik li {
 
 ul.cennik li .price-title {
   text-transform: uppercase;
-
+  text-align: center;
   display: flex;
 
 }
@@ -628,6 +642,14 @@ section.informacjePanel {
   padding: 10px;
   /* border-right: 1px solid black; */
 }
+
+@media(max-width:850px) {
+  section.informacjePanel {
+    width: 90%;
+  }
+}
+
+
 
 section.tabelaWiadomosci {
   width: 65%;
@@ -893,12 +915,15 @@ header.username {
 }
 
 a.logout {
+  display: inline-flex;
   font-size: 35px;
   align-self: center;
   border: 4px solid var(--specialColor);
   padding: 10px 15px;
   text-transform: uppercase;
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a.logout:hover {
@@ -954,6 +979,9 @@ table.wiadomosci {
   border-collapse: collapse;
   border: 2px solid var(--specialColor);
   margin: 0 auto;
+  table-layout: fixed;
+  word-wrap: break-word;
+  width: 90%;
 }
 
 @media (max-width: 850px) {
@@ -967,10 +995,10 @@ table.wiadomosci {
 
 
   table.wiadomosci {
-    align-self: center;
+    /* align-self: center; */
     font-size: 15px;
-    margin: 10px auto;
     width: 90%;
+    margin-bottom: 20px;
   }
 }
 
@@ -990,6 +1018,7 @@ tr.data th {
   font-weight: bold;
   color: #8b8b8b;
 }
+
 
 th {
   padding: 3px 5px;

@@ -39,7 +39,7 @@ endif; ?>
         </nav>
 
         <section class="contentMain">
-            <section class="informacje">
+            <section class="informacjePanel">
                 <header class="messagePanel">panel wiadomości</header>
                 <header class="username">
                     <div class="username">Użytkownik:</div><?php echo $_SESSION["user"]; ?>
