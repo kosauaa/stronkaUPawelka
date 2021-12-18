@@ -466,7 +466,7 @@ header.pracownicy {
   display: inline-flex;
   /* width: 300px; */
   margin: 120px auto 50px auto;
-  font-size: 50px;
+  font-size: 40px;
 
 
 }
@@ -547,11 +547,11 @@ div.otwarcie {
 section.otwarcie {
   display: flex;
   flex-direction: row;
-  margin-bottom: 70px;
 }
 
 div.week {
-  width: 150px;
+  width: 60px;
+  margin-right: 5px;
 }
 
 div.ikonaKalendarz {
@@ -618,7 +618,7 @@ iframe {
   /* box-shadow: 3px 5px #000; */
 }
 
-section.informacje {
+section.informacjePanel {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -729,15 +729,23 @@ textarea:hover::focus:-ms-placeholder {
   color: #cbc6c1;
 }
 
-*/ section.formularz {
+section.formularz {
   display: flex;
 }
 
 header.otwarcie,
 header.kontakt-info {
   align-self: center;
-  font-size: 2.3em;
+  display: flex;
+  font-size: 2.1em;
   padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+@media(max-width: 850px) {
+  section.informacje {
+    width: 80%;
+  }
 }
 
 header {
@@ -942,7 +950,6 @@ header.messagePanel {
 }
 
 table.wiadomosci {
-  width: 90%;
   /* word-wrap: break-word; */
   border-collapse: collapse;
   border: 2px solid var(--specialColor);
@@ -1203,8 +1210,8 @@ th {
     /* align-items: center; */
 
     height: 70%;
-    width: 30%;
-    padding: 0 20px;
+    width: 95%;
+    padding: 0 10px;
   }
 
 
