@@ -49,57 +49,117 @@ endif; ?>
             </section>
 
             <section class="tabelaWiadomosci">
-                <table class="wiadomosci" border="1">
+                <!-- <table class="wiadomosci" border="1">
                     <tr class="titles">
                         <th>ID</th>
                         <th>Data</th>
                         <th>Nazwa</th>
                         <th>E-mail</th>
                         <th>Wiadomość</th>
-                    </tr>
+                    </tr> -->
+
+                <?php
+                // połączenie z bazą danych w osobnym pliku
+                require_once "db_connection.php";
+                // zapytanie do bazy danych
+                $result = mysqli_query($db, "SELECT * FROM wiadomosci",);
+                $count = mysqli_num_rows($result);
+                if ($count == 0) {
+                ?>
+                    <header class="brak">BRAK WIADOMOŚCI !</header>
+                <?php
+                } else { ?>
+                    <section class="tabelaWiadomosci">
+                        <table class="wiadomosci" border="1">
+                            <!-- <tr class="titles">
+                                <th>ID</th>
+                                <th>Data</th>
+                                <th>Nazwa</th>
+                                <th>E-mail</th>
+                                <th>Wiadomość</th>
+                            </tr> -->
+                            <?php
+
+                            while ($row = mysqli_fetch_array($result)) {
+
+
+
+                            ?>
+
+                                <?php
+                                // $ilosc_wierszy = mysqli_num_rows($result);
+                                // // echo $ilosc_wierszy;
+                                // echo $row[3];
+                                // print_r($row);
+                                // print_r($row["id"]);
+                                // if ($ilosc_wierszy > 1) {
+
+                                // 
+                                ?>
+                                <!-- <tr class="blank">
+                                        <th colspan="2"></th>
+                                    </tr> -->
+                                <!-- <?php
+                                        // }
+                                        ?> -->
+                                <tr class="titles">
+                                    <th>ID</th>
+                                    <th><?php echo $row['id']; ?></th>
+                                </tr>
+                                <tr class="data">
+                                    <th>Data</th>
+                                    <th><?php echo $row['data']; ?></th>
+                                </tr>
+                                <tr class="nazwa">
+                                    <th>Nazwa</th>
+                                    <th><?php echo $row['nazwa']; ?></th>
+                                </tr>
+                                <tr class="email">
+                                    <th>E-mail</th>
+                                    <th><?php echo $row['email']; ?></th>
+                                </tr>
+                                <tr class="message">
+                                    <th>Wiadomość</th>
+                                    <th><?php echo $row['message']; ?></th>
+                                </tr>
+                                <tr class="blank">
+                                    <th colspan="2"></th>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                        </table>
+                        <a href="clean.php" class="clean">wyczyść wiadomości</a>
+                    <?php
+
+                }
+                    ?>
+
+
+
+                    </section>
+
+
+
 
                     <?php
-                    // połączenie z bazą danych w osobnym pliku
-                    require_once "db_connection.php";
-                    // zapytanie do bazy danych
-                    $result = mysqli_query($db, "SELECT * FROM wiadomosci",);
+                    mysqli_close($db);
+                    ?>
 
-                    while ($row = mysqli_fetch_array($result)) {
-                    ?>
-                        <tr class="data">
-                            <th><?php echo $row['id']; ?></th>
-                            <th><?php echo $row['data']; ?></th>
-                            <th><?php echo $row['nazwa']; ?></th>
-                            <th><?php echo $row['email']; ?></th>
-                            <th><?php echo $row['message']; ?></th>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </table>
             </section>
 
 
-
-
-            <?php
-            mysqli_close($db);
-            ?>
-
         </section>
 
-
-    </section>
-
-    <footer>
-        © 2021 U Pawełka
-        <a href="" class="hamburger">
-            <i class="fas fa-bars"></i>
-        </a>
-    </footer>
+        <footer>
+            © 2021 U Pawełka
+            <a href="" class="hamburger">
+                <i class="fas fa-bars"></i>
+            </a>
+        </footer>
 
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>

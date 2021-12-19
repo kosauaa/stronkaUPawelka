@@ -13,6 +13,9 @@
 
 body {
   background-color: var(--thirdColor);
+  /* overflow-x: scroll; */
+  scroll-behavior: smooth;
+  overflow-y: overlay;
 }
 
 
@@ -21,7 +24,7 @@ body {
 .contentMain {
   display: flex;
   flex-direction: row;
-  /* height: 80vh; */
+  min-height: calc(100vh - 80px - 30px);
   margin-top: calc((20vh + 80px)/2);
   margin-bottom: 0;
   width: 100vw;
@@ -132,10 +135,41 @@ section.aboutText {
 
 }
 
+tr th:first-child {
+  text-transform: uppercase;
+  width: 110px;
+}
+
+tr.blank {
+  height: 25px;
+  border-collapse: separate;
+  border-left: none;
+}
+
+
+tr.blank th {
+  border-left: none;
+}
+
 header.about {
   font-size: 1.7em;
   margin-bottom: 5px;
 }
+
+header.brak {
+  display: block;
+  color: var(--specialColor);
+  font-size: 30px;
+  align-self: center;
+
+  padding: 10px 15px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin: 50px auto;
+  width: 60%;
+}
+
+
 
 .aboutContent span {
   font-size: 1.2em;
@@ -161,7 +195,7 @@ body {
 
 
 section.main {
-  min-height: 100vh;
+  min-height: calc(100vh - 30px);
   width: 100vw;
   z-index: 0;
   background-color: var(--firstColor);
@@ -598,7 +632,7 @@ span.kontakt {
   flex-direction: row;
   display: flex;
   width: 100%;
-  height: 70vh;
+  min-height: 70vh;
 }
 
 div.kontakt-box {
@@ -646,7 +680,8 @@ section.informacjePanel {
 
 @media(max-width:850px) {
   section.informacjePanel {
-    width: 90%;
+    width: 100%;
+    padding: 0;
   }
 }
 
@@ -680,7 +715,7 @@ footer {
   display: flex;
   background-color: var(--secondColor);
   color: white;
-  width: 100%;
+  width: 100vw;
   height: 30px;
   align-items: center;
   justify-content: center;
@@ -927,9 +962,29 @@ a.logout {
   margin-right: auto;
 }
 
+a.clean {
+  display: block;
+  color: var(--secondColor);
+  font-size: 20px;
+  align-self: center;
+  border: 4px solid var(--secondColor);
+  padding: 10px 15px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  margin: 50px auto;
+  width: 300px;
+
+}
+
 a.logout:hover {
   color: white;
 }
+
+a.clean:hover {
+  color: white;
+}
+
+
 
 div.username {
   color: var(--specialColor);
@@ -982,10 +1037,11 @@ table.wiadomosci {
   margin: 0 auto;
   table-layout: fixed;
   word-wrap: break-word;
-  width: 90%;
+  min-width: 550px;
 }
 
 @media (max-width: 850px) {
+
   section.informacje {
     width: 100%;
   }
@@ -1000,6 +1056,7 @@ table.wiadomosci {
     font-size: 15px;
     width: 90%;
     margin-bottom: 20px;
+    min-width: 90vw;
   }
 }
 
@@ -1015,10 +1072,6 @@ tr.titles th {
   color: black;
 }
 
-tr.data th {
-  font-weight: bold;
-  color: #8b8b8b;
-}
 
 
 th {
