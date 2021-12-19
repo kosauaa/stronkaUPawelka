@@ -1,7 +1,9 @@
 # stronkaUPawelka
 
 Konto użytkownika do bazy danych
+
 login: adminek
+
 hasło: henio
 
 nazwa bazy danych: bazunia
