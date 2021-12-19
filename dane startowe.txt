@@ -2,15 +2,25 @@ Konto użytkownika do bazy danych
 login: adminek
 hasło: henio
 
+nazwa bazy danych: bazunia
 
-Bazy danych
-
-
-1. nazwa: bazunia
-
-CREATE TABLE `bazunia`.`wiadomosci` ( `id` INT NOT NULL AUTO_INCREMENT , `nazwa` VARCHAR(50) NOT NULL , `email` VARCHAR(30) NOT NULL , `message` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+1.tabela wiadomosci
 
 
-2. nazwa: uzytkownicy
+CREATE TABLE `wiadomosci` (
+  `id` int(20) NOT NULL,
+  `data` timestamp NULL DEFAULT current_timestamp(),
+  `nazwa` varchar(30) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `message` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `bazunia`.`uzytkownicy` ( `id` INT NOT NULL AUTO_INCREMENT , `login` VARCHAR(30) NOT NULL , `password` VARCHAR(30) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+2.tabela uzytkownicy
+
+CREATE TABLE `uzytkownicy` (
+  `id` int(11) NOT NULL,
+  `login` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
