@@ -1,0 +1,28 @@
+# stronkaUPawelka
+
+Konto użytkownika do bazy danych
+login: adminek
+hasło: henio
+
+nazwa bazy danych: bazunia
+
+1.tabela wiadomosci
+
+
+CREATE TABLE `wiadomosci` (
+  `id` int(20) NOT NULL,
+  `data` timestamp NULL DEFAULT current_timestamp(),
+  `nazwa` varchar(30) CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `message` text CHARACTER SET utf8 COLLATE utf8_polish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+2.tabela uzytkownicy
+
+CREATE TABLE `uzytkownicy` (
+  `id` int(11) NOT NULL,
+  `login` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
