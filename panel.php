@@ -83,10 +83,6 @@ endif; ?>
 
 
             <?php
-            // echo "Imie: " . $row['nazwa'] . "<br>" . $row['email'] . "<br>" . " " . $row['message'];
-            // echo "<br><br>";
-
-
             mysqli_close($db);
             ?>
 
@@ -96,7 +92,7 @@ endif; ?>
     </section>
 
     <footer>
-        © 2018 U Pawełka
+        © 2021 U Pawełka
         <a href="" class="hamburger">
             <i class="fas fa-bars"></i>
         </a>
