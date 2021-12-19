@@ -4,7 +4,7 @@ if (empty($_SESSION['user'])) : header('Location: logowanie.php');
 endif; ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@ endif; ?>
 </head>
 
 <body>
-    <!-- By Dominik Biedebach @domobch -->
+
 
     <link href="http://fonts.cdnfonts.com/css/tw-cen-mt-condensed" rel="stylesheet">
 
